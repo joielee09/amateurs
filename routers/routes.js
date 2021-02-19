@@ -41,8 +41,10 @@ const routes = {
   upload: UPLOAD,
   videoDetail:(id)=>{
     if(id) {
-      return `videos/${id}`;
+      console.log("id exist")
+      return `/videos/${id}`;
     } else {
+      console.log("id don't exist")
       return VIDEO_DETAIL;
     }
   },

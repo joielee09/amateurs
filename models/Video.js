@@ -21,7 +21,12 @@ const VideoSchema = new mongoose.Schema({
   comments: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Video"
-  }]
+  }],
+  //recommendation video for current video
+  recommendation: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Video"
+  }],
 });
 
 const model = mongoose.model("Video", VideoSchema);
