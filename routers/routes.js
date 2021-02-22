@@ -28,28 +28,34 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   user: USER,
-  userDetail:(id)=>{
-    if(id){
+  userDetail: (id) => {
+    if (id) {
       return `user/${id}`;
-    } else {
-      return USER_DETAIL;
     }
+    return USER_DETAIL;
   },
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
-  videos:VIDEOS,
+  videos: VIDEOS,
   upload: UPLOAD,
-  videoDetail:(id)=>{
-    if(id) {
-      console.log("id exist")
+  videoDetail: (id) => {
+    if (id) {
       return `/videos/${id}`;
-    } else {
-      console.log("id don't exist")
-      return VIDEO_DETAIL;
     }
+    return VIDEO_DETAIL;
   },
-  editVideo: EDIT_VIDEO,
-  deleteVideo: DELETE_VIDEO
-}
+  editVideo: (id) => {
+    if (id) {
+      return `videos/${id}/edit`;
+    }
+    return EDIT_VIDEO;
+  },
+  deleteVideo: (id) => {
+    if (id) {
+      return `videos/${id}/delete`;
+    }
+    return DELETE_VIDEO;
+  },
+};
 
 export default routes;
