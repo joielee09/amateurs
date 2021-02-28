@@ -7,16 +7,16 @@ import { githubLoginCallback } from "./controllers/userController";
 import routes from "./routers/routes";
 
 //strategy: way of authentication like facebook , github
-// passport.use(User.createStrategy()); 
-// passport.use(
-//   new GithubStrategy({
-//     clientID:"d036a452d79456589250",
-//     clientSecret:"bd461d8759ae55638c181c2128a8ba09a94a2e5d",
-//     redirect_uri: "http://localhost:4000/auth/github/callback"
-//   },
-//     githubLoginCallback
-//   ),
-// );
+passport.use(User.createStrategy()); 
+passport.use(
+  new GithubStrategy({
+    clientID: "51704a91b44835aa1bf4",
+    clientSecret:"fe2f4df8376760e4c9f5f279129f6857df40f30d",
+    redirect_uri: `http://localhost:4000${routes.githubCallback}`
+  },
+    githubLoginCallback
+  ),
+);
 
 //serialization: what information we are going to give cookie
 passport.serializeUser(User.serializeUser());   
