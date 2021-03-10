@@ -143,9 +143,9 @@ input {
 .u-avatar {
   height: 80px;
   background-color: #ea232c;
-  -webkit-border-radius: 50%;
-     -moz-border-radius: 50%;
-          border-radius: 50%; }
+  -webkit-border-radius: 30%;
+     -moz-border-radius: 30%;
+          border-radius: 30%; }
 
 html,
 body {

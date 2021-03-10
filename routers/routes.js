@@ -26,6 +26,11 @@ const DELETE_VIDEO = "/:id/delete";
 const GITHUB = "/auth/github";
 const GITHUB_CALLBACK = "/auth/github/callback";
 
+// Facebook
+
+const KAKAO = "/auth/kakao";
+const KAKAO_CALLBACK = "/auth/kakao/callback";
+
 const routes = {
   home: HOME,
   getJoin: GET_JOIN,
@@ -34,7 +39,7 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   user: USER,
-  userDetail: (id) => {
+  userDetail: id => {
     if (id) {
       return `user/${id}`;
     }
@@ -44,19 +49,19 @@ const routes = {
   changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
   upload: UPLOAD,
-  videoDetail: (id) => {
+  videoDetail: id => {
     if (id) {
       return `/videos/${id}`;
     }
     return VIDEO_DETAIL;
   },
-  editVideo: (id) => {
+  editVideo: id => {
     if (id) {
       return `/videos/${id}/edit`;
     }
     return EDIT_VIDEO;
   },
-  deleteVideo: (id) => {
+  deleteVideo: id => {
     if (id) {
       return `/videos/${id}/delete`;
     }
@@ -65,6 +70,8 @@ const routes = {
   gitHub: GITHUB,
   githubCallback: GITHUB_CALLBACK,
   me: ME,
+  kakao: KAKAO,
+  kakaoCallback: KAKAO_CALLBACK
 };
 
 export default routes;
